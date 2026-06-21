@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皇冠体育 · 再访与收藏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉卡片 Hero */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9edf2;
+      padding: 2.8rem 2.2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .hero-card:hover {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #eef2f7;
+      border-radius: 30px;
+      padding: 0.25rem 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      color: #3b4d62;
+      margin-bottom: 1rem;
+      border: 1px solid #d7dfe8;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 550;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.75rem;
+      color: #0f1a2b;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #3f556b;
+      max-width: 640px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-action {
+      display: inline-block;
+      background: #1e2a3a;
+      color: #fff;
+      border-radius: 40px;
+      padding: 0.7rem 2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-action:hover {
+      background: #2c3e55;
+    }
+
+    /* 卡片网格系统 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border: 1px solid #e6eaef;
+      border-radius: 24px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s, border-color 0.15s;
+    }
+
+    .info-card:hover {
+      border-color: #d0d8e2;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+      display: inline-block;
+      background: #f2f5f9;
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      border-radius: 14px;
+      color: #2f4055;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 540;
+      margin: 0.5rem 0 0.3rem;
+      letter-spacing: -0.2px;
+    }
+
+    .card-desc {
+      color: #3d5269;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* 适合人群卡片 三列在宽屏 */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .audience-item {
+      background: #ffffff;
+      border: 1px solid #e9edf2;
+      border-radius: 20px;
+      padding: 1.4rem 1.4rem 1.6rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+    }
+
+    .audience-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #6f839b;
+      margin-bottom: 0.3rem;
+    }
+
+    .audience-name {
+      font-weight: 530;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .audience-note {
+      color: #456077;
+      font-size: 0.9rem;
+    }
+
+    /* 自然链接段落卡片 */
+    .link-section-card {
+      background: #ffffff;
+      border: 1px solid #e6eaef;
+      border-radius: 24px;
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .link-section-title {
+      font-size: 1.2rem;
+      font-weight: 530;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .link-paragraph {
+      font-size: 1rem;
+      color: #2f4055;
+      max-width: 780px;
+    }
+
+    .link-paragraph a {
+      color: #1a2b3e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b6c4d4;
+      font-weight: 500;
+      transition: color 0.15s, text-decoration-color 0.15s;
+    }
+
+    .link-paragraph a:hover {
+      color: #0c1b2e;
+      text-decoration-color: #7a8da3;
+    }
+
+    .faq-mini {
+      margin-top: 1.4rem;
+      border-top: 1px solid #eef2f6;
+      padding-top: 1.4rem;
+    }
+
+    .faq-q {
+      font-weight: 530;
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-a {
+      color: #3f556b;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #6f839b;
+      text-align: center;
+      border-top: 1px solid #dfe6ed;
+      padding-top: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 780px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 0 0.2rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 2rem 1.4rem;
+      }
+
+      body {
+        padding: 1rem 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 主视觉 Hero -->
+    <div class="hero-card">
+      <div class="hero-tag">📌 收藏 · 常回来看看</div>
+      <h1 class="hero-title">皇冠体育 · 再一次遇见</h1>
+      <p class="hero-sub">
+        有些地方值得你留在书签夹里。<br>
+        无论是熟悉的老面孔，还是想要持续关注的动态。<br>
+        这里是 <a href="https://cn-main-huangguan.com" style="color:#1a2b3e; text-decoration: underline; text-underline-offset:3px;">皇冠体育</a>，一个你可以随时回访的角落。
+      </p>
+      <a href="https://cn-main-huangguan.com" class="hero-action">皇冠体育</a>
+    </div>
+
+    <!-- 两张用途卡片 -->
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="card-icon">🔖</div>
+        <h2 class="card-title">常访 · 随手收藏</h2>
+        <p class="card-desc">
+          把页面加入浏览器收藏夹，不必每次都重新搜索。下次再来时，它就在那里等着你。适合那些平时有固定查看习惯的人，不用费心记地址。
+        </p>
+      </div>
+      <div class="info-card">
+        <div class="card-icon">🔄</div>
+        <h2 class="card-title">持续关注 · 自然节奏</h2>
+        <p class="card-desc">
+          不需要每天盯屏，隔段时间回来看看变化就好。保持一种轻松的关注状态，而不是被信息推着走。偶尔回来，或许就有新发现。
+        </p>
+      </div>
+    </div>
+
+    <!-- 适合人群 三块 -->
+    <div class="audience-grid">
+      <div class="audience-item">
+        <div class="audience-label">👤 常客型</div>
+        <div class="audience-name">回头访客</div>
+        <div class="audience-note">喜欢固定去同一个站点，习惯使然，不轻易换地方。</div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-label">👥 观望型</div>
+        <div class="audience-name">间歇关注者</div>
+        <div class="audience-note">隔段时间想起来就看看，不频繁但也不完全断联。</div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-label">📎 收藏型</div>
+        <div class="audience-name">书签党</div>
+        <div class="audience-note">喜欢把感兴趣的地方收进收藏夹，日后翻出来再访。</div>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 + 小 FAQ 摘要 -->
+    <div class="link-section-card">
+      <div class="link-section-title">📎 再访笔记</div>
+      <div class="link-paragraph">
+        有时候我们收藏一个站点，就是图个方便。不用每次重新输入、不用翻历史记录。<br>
+        把 <a href="https://cn-main-huangguan.com">皇冠体育</a> 放在收藏夹的某个分类里，下次打开浏览器时顺手就能点开。它可能不是你每天都要去的地方，但每当你想起来，它就在那里。
+      </div>
+
+      <div class="faq-mini">
+        <div class="faq-q">💬 为什么推荐收藏而非依赖搜索？</div>
+        <div class="faq-a">搜索有时会变化，但收藏夹里的地址一直稳定。存一次，以后直接访问，省时省力。</div>
+
+        <div class="faq-q">💬 隔多久回来一次比较合适？</div>
+        <div class="faq-a">没有固定频率，取决于你自己。可以每周、每月，或者想起来就看看，保持自己的节奏就好。</div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      皇冠体育 · 收藏夹里一个安静的坐标
+    </div>
+  </div>
+</body>
+</html>
